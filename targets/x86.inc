@@ -42,3 +42,10 @@ packages {
 	'kmod-mt7603',
 	'kmod-mt7615e',
 }
+
+defaults {
+	factory = '-squashfs-combined',
+	factory_ext = '.img.gz',
+	sysupgrade = '-squashfs-combined',
+	sysupgrade_ext = '.img.gz',
+}
