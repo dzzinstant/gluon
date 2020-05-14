@@ -35,6 +35,7 @@ pipeline {
 			agent { label 'gluon-docker-v2' }
 			steps {
 				sh label: 'Identify runner', script: 'echo $SLAVE_NAME'
+				sh 'make clean'
 				sh 'make update'
 				sh 'test -d /dl_cache && ln -s /dl_cache openwrt/dl || true'
 				timeout(time: 2, unit: "HOURS") {
